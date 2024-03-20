@@ -1,0 +1,14 @@
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\bin\Debug\net8.0\MovieTheatreManagementSystem.exe
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\bin\Debug\net8.0\MovieTheatreManagementSystem.deps.json
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\bin\Debug\net8.0\MovieTheatreManagementSystem.runtimeconfig.json
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\bin\Debug\net8.0\MovieTheatreManagementSystem.dll
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\bin\Debug\net8.0\MovieTheatreManagementSystem.pdb
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\MovieTheatreManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\MovieTheatreManagementSystem.AssemblyInfoInputs.cache
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\MovieTheatreManagementSystem.AssemblyInfo.cs
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\MovieTheatreManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\MovieTheatreManagementSystem.dll
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\refint\MovieTheatreManagementSystem.dll
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\MovieTheatreManagementSystem.pdb
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\MovieTheatreManagementSystem.genruntimeconfig.cache
+C:\Users\Owner\Documents\C# 2024\MovieTheatreManagementSystem\obj\Debug\net8.0\ref\MovieTheatreManagementSystem.dll
