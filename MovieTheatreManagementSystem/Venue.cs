@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +10,16 @@ namespace MovieTheatreManagementSystem
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Theater> Theaters { get; set; }
 
-        public Venue()
+        public Venue(int id, string name)
         {
-            Theaters = new List<Theater>();
+            Id = id;
+            Name = name;
+        }
+
+        public override string ToString()
+        {
+            return $"{Id}\t{Name}\t";
         }
     }
 }
