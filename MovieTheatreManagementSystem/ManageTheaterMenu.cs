@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace MovieTheatreManagementSystem
 {
     internal class ManageTheaterMenu
     {
-        private static List<Theater> theaters = new List<Theater>();
+        public static List<Theater> theaters = new List<Theater>();
 
         public static void DisplayTheaterMenu()
         {
@@ -83,6 +83,8 @@ namespace MovieTheatreManagementSystem
                 Console.WriteLine("Enter the new type of the theater:");
                 string newType = Console.ReadLine();
                 theaterToUpdate.Type = newType;
+
+                Console.WriteLine("Theatre updates successfully");
             }
             else
             {
