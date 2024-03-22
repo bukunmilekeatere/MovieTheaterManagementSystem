@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace MovieTheatreManagementSystem
 {
     internal class ManageMoviesMenu
     {
-        private static List<Movie> movies = new List<Movie>();
+        public static List<Movie> movies = new List<Movie>();
 
         public static void DisplayMovieMenu()
         {
@@ -24,6 +24,13 @@ namespace MovieTheatreManagementSystem
 
         public static void AddNewMovie()
         {
+            Console.WriteLine("Enter the movie Id:");
+            int id;
+            while (!int.TryParse(Console.ReadLine(), out id))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid release id.");
+            }
+
             Console.WriteLine("Enter the title of the movie:");
             string title = Console.ReadLine();
 
@@ -45,7 +52,7 @@ namespace MovieTheatreManagementSystem
             }
 
             // Pass Movie constructor
-            Movie newMovie = new Movie(title, genre, releaseYear, duration);
+            Movie newMovie = new Movie(title, genre, releaseYear, duration, id);
 
             movies.Add(newMovie);
             Console.WriteLine("Movie added successfully.");
