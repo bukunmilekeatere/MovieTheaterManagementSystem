@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +11,7 @@ namespace MovieTheatreManagementSystem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Movie Theater System");
+            Console.WriteLine("------------------------------------");
             Console.WriteLine();
             DisplayMainMenu();
         }
@@ -22,8 +23,7 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine("2. Manage Theaters");
             Console.WriteLine("3. Manage Venues");
             Console.WriteLine("4. Search for Movies in a Specific Theater");
-            Console.WriteLine("5. Search for Venues that have showtimes for a Specific Movie [BONUS]");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("5. Exit");
             Console.WriteLine();
             Console.WriteLine("Please enter your choice: ");
 
@@ -42,11 +42,14 @@ namespace MovieTheatreManagementSystem
                         ManageVenues();
                         break;
                     case 4:
-                        Console.WriteLine("Exiting...");
-                        Environment.Exit(0);
+                        Database(ManageVenueMenu.venues);
+                        break;
+                    case 5:
+                        Exit();
                         break;
                     default:
                         Console.WriteLine("Invalid choice");
+                        MainMenu();
                         break;
                 }
             }
@@ -94,14 +97,12 @@ namespace MovieTheatreManagementSystem
             }
         }
 
-        static void MainMenu()
+        public static void MainMenu()
         {
             Console.Clear();
 
             DisplayMainMenu();
         }
-
-
 
         static void ManageTheaters()
         {
@@ -141,8 +142,48 @@ namespace MovieTheatreManagementSystem
 
         static void ManageVenues()
         {
-            Console.WriteLine("");
+            while (true)
+            {
+                MovieTheatreManagementSystem.ManageVenueMenu.DisplayVenueMenu();
 
+                int choice;
+                if (int.TryParse(Console.ReadLine(), out choice))
+                {
+                    switch (choice)
+                    {
+                        case 1:
+                            MovieTheatreManagementSystem.ManageVenueMenu.AddVenue();
+                            break;
+                        case 2:
+                            MovieTheatreManagementSystem.ManageVenueMenu.RemoveVenue();
+                            break;
+                        case 3:
+                            MovieTheatreManagementSystem.ManageVenueMenu.UpdateVenue();
+                            break;
+                        case 4:
+                            MovieTheatreManagementSystem.ManageVenueMenu.ViewAllVenues();
+                            break;
+                        case 5:
+                            MainMenu(); // Go back to the main menu
+                            break;
+                        default:
+                            Console.WriteLine("Invalid enter an option.");
+                            break;
+                    }
+                }
+            }
         }
+        static void Database(List<Venue> venues)
+        {
+            while (true)
+            {
+                MovieTheatreManagementSystem.Database.SearchMoviesInSpecificTheater(venues);
+            }
+        }
+
+        static void Exit()
+        {
+            Console.WriteLine("Exiting the Movie Theater Management System. Thank you!");
         }
     }
+}
