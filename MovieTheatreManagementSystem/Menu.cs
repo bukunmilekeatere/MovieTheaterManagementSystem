@@ -16,6 +16,7 @@ namespace MovieTheatreManagementSystem
             DisplayMainMenu();
         }
 
+        // stores the main menu
         static void DisplayMainMenu()
         {
             Console.WriteLine("Main Menu:");
@@ -27,9 +28,11 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine();
             Console.WriteLine("Please enter your choice: ");
 
+            // declares user input
             int choice;
             if (int.TryParse(Console.ReadLine(), out choice))
             {
+                // calls each function based on user input
                 switch (choice)
                 {
                     case 1:
@@ -47,6 +50,7 @@ namespace MovieTheatreManagementSystem
                     case 5:
                         Exit();
                         break;
+                    // if user inputs none of the options, this acts for handling user error
                     default:
                         Console.WriteLine("Invalid choice");
                         MainMenu();
@@ -116,16 +120,16 @@ namespace MovieTheatreManagementSystem
                     switch (choice)
                     {
                         case 1:
-                            MovieTheatreManagementSystem.ManageTheaterMenu.AddNewTheater();
+                            MovieTheatreManagementSystem.ManageMoviesMenu.AddNewMovie();
                             break;
                         case 2:
-                            MovieTheatreManagementSystem.ManageTheaterMenu.RemoveTheater();
+                            MovieTheatreManagementSystem.ManageMoviesMenu.RemoveMovie();
                             break;
                         case 3:
                             MovieTheatreManagementSystem.ManageTheaterMenu.UpdateTheaterDetails();
                             break;
                         case 4:
-                            MovieTheatreManagementSystem.ManageTheaterMenu.ViewAllTheaters();
+                            MovieTheatreManagementSystem.ManageMoviesMenu.ViewAllMovies();
                             break;
                         case 5:
                             MainMenu(); // Go back to the main menu
@@ -161,9 +165,18 @@ namespace MovieTheatreManagementSystem
                             MovieTheatreManagementSystem.ManageVenueMenu.UpdateVenue();
                             break;
                         case 4:
-                            MovieTheatreManagementSystem.ManageVenueMenu.ViewAllVenues();
+                            MovieTheatreManagementSystem.ManageTheaterMenu.AddNewTheater();
                             break;
                         case 5:
+                            MovieTheatreManagementSystem.ManageTheaterMenu.RemoveTheater();
+                            break;
+                        case 6:
+                            MovieTheatreManagementSystem.ManageTheaterMenu.ViewAllTheaters();
+                            break;
+                        case 7:
+                            MovieTheatreManagementSystem.ManageVenueMenu.ViewAllVenues();
+                            break;
+                        case 8:
                             MainMenu(); // Go back to the main menu
                             break;
                         default:
