@@ -15,8 +15,11 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine("1. Add a new venue");
             Console.WriteLine("2. Remove a venue");
             Console.WriteLine("3. Update venue details");
-            Console.WriteLine("4. View all venues");
-            Console.WriteLine("5.Back to the Main Menu");
+            Console.WriteLine("4. Add a new Theatre");
+            Console.WriteLine("5. Remove a Theatre");
+            Console.WriteLine("6. View all Theatres");
+            Console.WriteLine("7. View all venues");
+            Console.WriteLine("8.Back to the Main Menu");
             Console.WriteLine();
             Console.Write("Please enter your choice: ");
         }
@@ -37,6 +40,8 @@ namespace MovieTheatreManagementSystem
             venues.Add(newVenue);
             Console.WriteLine($"Venue added successfully");
         }
+
+
         public static void RemoveVenue()
         {
             Console.WriteLine("Enter the ID of the venue where you want to remove: ");
