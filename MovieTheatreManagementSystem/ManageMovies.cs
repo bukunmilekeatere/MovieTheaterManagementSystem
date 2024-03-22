@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +9,7 @@ namespace MovieTheatreManagementSystem
     internal class ManageMovies
     {
         public string Title { get; set; }
-        private List<Movie> movies;
+        public List<Movie> movies;
 
         public ManageMovies()
         {
@@ -20,7 +20,7 @@ namespace MovieTheatreManagementSystem
         {
             int id = movies.Count + 1;
 
-            Movie movie = new Movie(title, genre, releaseYear, duration)
+            Movie movie = new Movie(title, genre, releaseYear, duration, id)
             {
                 Id = id,
                 Title = title,
