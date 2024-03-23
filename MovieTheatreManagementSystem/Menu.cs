@@ -62,7 +62,7 @@ namespace MovieTheatreManagementSystem
                 Console.WriteLine("Invalid Please enter a number.");
             }
         }
-
+        // start managemovies and methods inside of it 
         static void ManageMovies()
         {
             while (true)
