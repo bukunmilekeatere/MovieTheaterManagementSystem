@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,11 +10,13 @@ namespace MovieTheatreManagementSystem
     {
         private List<Theater> theaters;
 
+        // initializes the list of theaters
         public ManageTheater()
         {
             theaters = new List<Theater>();
         }
 
+        // adds new theater
         public void AddTheater(int idForVenue, string name, string type)
         {
             int id = theaters.Count + 1;
@@ -32,6 +34,7 @@ namespace MovieTheatreManagementSystem
 
         }
 
+        // removes theater
         public void RemoveTheater(string name)
         {
             Theater removeTheater = null;
@@ -59,6 +62,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
+        // updates theater info
         public void UpdateTheater(string name, string updatedName, string type, string updatedType)
         {
             Theater updateTheater = null;
