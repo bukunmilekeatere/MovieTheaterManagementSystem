@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MovieTheatreManagementSystem.Theater;
 
 namespace MovieTheatreManagementSystem
 {
@@ -22,7 +23,7 @@ namespace MovieTheatreManagementSystem
             Console.Write("Please enter your choice: ");
         }
 
-        public static void AddNewTheater()
+        public static void AddNewTheater(int venueId, string theaterName, string theaterType)
         {
             Console.WriteLine("Enter the ID of the venue where you want to add the theater: ");
             int idForVenue;
@@ -30,9 +31,9 @@ namespace MovieTheatreManagementSystem
             {
                 Console.WriteLine("Invalid input. Please enter a valid id for venue.");
             }
-
+            //  to find venue with id 
             Venue matchedId = ManageVenueMenu.venues.Find(venues => venues.Id == idForVenue);
-            if (matchedId == null) 
+            if (matchedId == null)
             {
                 Console.WriteLine("Id not found");
             }
@@ -44,19 +45,20 @@ namespace MovieTheatreManagementSystem
 
             Console.WriteLine("Enter the type of the new theater (regular, IMAX, DBOX, FULL RECLINER):");
             string type = Console.ReadLine();
-            while(type != "IMAX" && type != "DBOX" && type != "regular" && type != "FULL RECLINER")
+            while (type != "IMAX" && type != "DBOX" && type != "regular" && type != "FULL RECLINER")
             {
                 Console.WriteLine("Invalid Input");
                 Console.WriteLine("Enter the type of the new theater (regular, IMAX, DBOX, FULL RECLINER):");
                 type = Console.ReadLine();
             }
 
-            // Pass Movie constructor
+            // theayer object
             Theater newTheater = new Theater(idForVenue, name, type);
 
             theaters.Add(newTheater);
             Console.WriteLine($"Theater added successfully to venue ID {idForVenue}.");
         }
+
 
 
         public static void RemoveTheater()
@@ -127,5 +129,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
+
     }
 }
+
