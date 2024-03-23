@@ -9,6 +9,7 @@ namespace MovieTheatreManagementSystem
 {
     internal class ManageTheaterMenu
     {
+        // list for storing the theaters 
         public static List<Theater> theaters = new List<Theater>();
 
         public static void DisplayTheaterMenu()
@@ -23,6 +24,7 @@ namespace MovieTheatreManagementSystem
             Console.Write("Please enter your choice: ");
         }
 
+        // adds a new theater
         public static void AddNewTheater(int venueId, string theaterName, string theaterType)
         {
             Console.WriteLine("Enter the ID of the venue where you want to add the theater: ");
@@ -52,7 +54,7 @@ namespace MovieTheatreManagementSystem
                 type = Console.ReadLine();
             }
 
-            // theayer object
+            // theater object
             Theater newTheater = new Theater(idForVenue, name, type);
 
             theaters.Add(newTheater);
@@ -60,7 +62,7 @@ namespace MovieTheatreManagementSystem
         }
 
 
-
+        // removing a theater
         public static void RemoveTheater()
         {
             Console.WriteLine("Enter the ID of the venue where you want to remove the theater from: ");
@@ -90,6 +92,7 @@ namespace MovieTheatreManagementSystem
             }         
         }
 
+        // updating theater info
         public static void UpdateTheaterDetails()
         {
             Console.WriteLine("Enter the ID of the venue where you want to update the theater: ");
@@ -113,6 +116,7 @@ namespace MovieTheatreManagementSystem
                 Console.WriteLine($"Movie '{theaterToUpdate}' not found.");
             }
         }
+        // view/show all theaters
         public static void ViewAllTheaters()
         {
             if (theaters.Count == 0)
