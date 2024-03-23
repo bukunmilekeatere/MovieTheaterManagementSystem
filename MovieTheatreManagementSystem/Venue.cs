@@ -14,6 +14,7 @@ namespace MovieTheatreManagementSystem
         public int VenueId { get; set; }
         public List<Theater> Theaters { get; set; }
 
+        // constructor for the venue class
         public Venue(int id, string name, int venueId)
         {
             Id = id;
@@ -22,6 +23,7 @@ namespace MovieTheatreManagementSystem
             this.VenueId = venueId;
         }
 
+        // override tostring method to show the info for venue
         public override string ToString()
         {
             return $"{Id}\t{Name}\t {VenueId}\t";
