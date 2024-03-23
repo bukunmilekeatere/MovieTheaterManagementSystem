@@ -9,9 +9,11 @@ namespace MovieTheatreManagementSystem
 {
     internal class ManageVenueMenu
     {
+        // list to store the venues
         public static List<Venue> venues = new List<Venue>();
         public static void DisplayVenueMenu()
         {
+            // menu for managing venues 
             Console.WriteLine("Manage Venues:");
             Console.WriteLine("1. Add a new venue");
             Console.WriteLine("2. Remove a venue");
@@ -23,6 +25,7 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine();
             Console.Write("Please enter your choice: ");
         }
+
         public static void AddVenue()
         {
             Console.WriteLine("Enter the ID of the venue: ");
@@ -47,6 +50,7 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine($"Venue added successfully");
         }
 
+        // adds a new theater to venue
         public static void AddNewTheaterToVenue()
         {
             Console.WriteLine("Enter the ID of the venue where you want to add a theater:");
@@ -91,6 +95,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
+        // removes a venue
         public static void RemoveVenue()
         {
             Console.WriteLine("Enter the ID of the venue where you want to remove: ");
@@ -113,6 +118,8 @@ namespace MovieTheatreManagementSystem
                 Console.WriteLine($"Venue '{name}' not found.");
             }
         }
+
+        // updates needed venue info
         public static void UpdateVenue()
         {
             Console.WriteLine("Enter the ID of the venue you want to update: ");
@@ -131,6 +138,8 @@ namespace MovieTheatreManagementSystem
                 Console.WriteLine($"Venue '{VenueUpdate}' not found.");
             }
         }
+
+        // show all the venues 
         public static void ViewAllVenues()
         {
             if (venues.Count == 0)
