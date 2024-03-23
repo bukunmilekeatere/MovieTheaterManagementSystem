@@ -8,8 +8,10 @@ namespace MovieTheatreManagementSystem
 {
     internal class ManageMoviesMenu
     {
+        // list for storing movies 
         public static List<Movie> movies = new List<Movie>();
 
+        // displayes the menu for managing movies 
         public static void DisplayMovieMenu()
         {
             Console.WriteLine("Manage Movies:");
@@ -22,6 +24,7 @@ namespace MovieTheatreManagementSystem
             Console.Write("Please enter your choice: ");
         }
 
+        // adds a new movie
         public static void AddNewMovie()
         {
             Console.WriteLine("Enter the movie Id:");
@@ -58,7 +61,7 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine("Movie added successfully.");
         }
 
-
+        // removes movie 
         public static void RemoveMovie()
         {
             Console.WriteLine("Enter the title of the movie to remove:");
@@ -75,7 +78,8 @@ namespace MovieTheatreManagementSystem
                 Console.WriteLine($"Movie '{title}' not found.");
             }
         }
-
+        
+        // updates movie info
         public static void UpdateMovieDetails()
         {
             Console.WriteLine("Enter the title of the movie to update:");
@@ -116,6 +120,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
+        // view/show all movies 
         public static void ViewAllMovies()
         {
             if (movies.Count == 0)
