@@ -14,11 +14,16 @@ namespace MovieTheatreManagementSystem
         public double TicketPrice { get; set; }
         public int NumberOfSeats { get; set; }
 
+        // constructor for the theater class 
         public Theater(string name)
         {
             Name = name;
         }
+
+        // list for the movies in theater
         public List<Movie> Movies { get; set; }
+
+        // constructor for the theater class
         public Theater(int idForVenue, string name, string type)
         {
 
@@ -28,6 +33,7 @@ namespace MovieTheatreManagementSystem
             Movies = new List<Movie>();
         }
 
+        // override tostring method to show info for theater
         public override string ToString()
         {
             return $"{IdForVenue}\t{Name}\t{Type}\t{TicketPrice} \t {NumberOfSeats}";
