@@ -8,14 +8,17 @@ namespace MovieTheatreManagementSystem
 {
     internal class ManageMovies
     {
+        // properties declared 
         public string Title { get; set; }
         public List<Movie> movies;
 
+        // constructor
         public ManageMovies()
         {
             movies = new List<Movie>();
         }
 
+        // adds movie 
         public void AddMovie(string title, string genre, int releaseYear, int duration)
         {
             int id = movies.Count + 1;
@@ -34,6 +37,7 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine("Movie added successfully");
         }
 
+        // removes movie 
         public void RemoveMovie(string title) 
         {
             Movie removeMovie = null;
@@ -61,6 +65,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
+        // updates movie info
         public void UpdateMovie(string title, string updatedTitle, string genre, string updatedGenre, int releaseYear, int updatedReleaseYear, int duration, int updatedDuration)
         {
             Movie updateMovie = null;
@@ -93,6 +98,7 @@ namespace MovieTheatreManagementSystem
 
         }
 
+        // prints out the movie in console
         public void PrintMovie()
         {
             Console.WriteLine($"Movies in {Title}: ");
@@ -102,6 +108,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
+        // method to get the movie using title
         private Movie GetMovieTitle(string title)
         {
             foreach (var movie in movies)
