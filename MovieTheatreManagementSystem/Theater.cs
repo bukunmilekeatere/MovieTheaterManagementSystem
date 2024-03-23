@@ -11,19 +11,52 @@ namespace MovieTheatreManagementSystem
         public int IdForVenue { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }
+        public double TicketPrice { get; set; }
+        public int NumberOfSeats { get; set; }
 
+        public Theater(string name)
+        {
+            Name = name;
+        }
         public List<Movie> Movies { get; set; }
         public Theater(int idForVenue, string name, string type)
         {
+
             IdForVenue = idForVenue;
             Name = name;
             Type = type;
             Movies = new List<Movie>();
         }
-     
+
         public override string ToString()
         {
-            return $"{IdForVenue}\t{Name}\t{Type}";
+            return $"{IdForVenue}\t{Name}\t{Type}\t{TicketPrice} \t {NumberOfSeats}";
+        }
+        public class IMAX : Theater
+        {
+            public IMAX(string name) : base(name)
+            {
+                TicketPrice = 15; // Example for IMAX 
+                NumberOfSeats = 100; // Example number of seats
+            }
+        }
+
+        public class DBOX : Theater
+        {
+            public DBOX(string name) : base(name)
+            {
+                TicketPrice = 20; // Example ticket for DBOX 
+                NumberOfSeats = 50; // Example number seats for DBOX
+            }
+        }
+
+        public class FullRecliner : Theater
+        {
+            public FullRecliner(string name) : base(name)
+            {
+                TicketPrice = 25; // Example ticket price FullRecliner 
+                NumberOfSeats = 30; // Example number of seat FullRecliner 
+            }
         }
     }
 }
