@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MovieTheatreManagementSystem.Theater;
 
 namespace MovieTheatreManagementSystem
 {
@@ -17,9 +18,8 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine("3. Update venue details");
             Console.WriteLine("4. Add a new Theatre");
             Console.WriteLine("5. Remove a Theatre");
-            Console.WriteLine("6. View all Theatres");
-            Console.WriteLine("7. View all venues");
-            Console.WriteLine("8.Back to the Main Menu");
+            Console.WriteLine("6. View all venues");
+            Console.WriteLine("7.Back to the Main Menu");
             Console.WriteLine();
             Console.Write("Please enter your choice: ");
         }
@@ -34,19 +34,68 @@ namespace MovieTheatreManagementSystem
 
             Console.WriteLine("Enter the name of the new venue: ");
             string name = Console.ReadLine();
+            Console.WriteLine("Enter the venue ID: ");
+            int venueId;
 
-            Venue newVenue = new Venue(id, name);
+            while (!int.TryParse(Console.ReadLine(), out venueId))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid venue ID.");
+            }
 
+            Venue newVenue = new Venue(id, name, venueId);
             venues.Add(newVenue);
             Console.WriteLine($"Venue added successfully");
         }
 
+        public static void AddNewTheaterToVenue()
+        {
+            Console.WriteLine("Enter the ID of the venue where you want to add a theater:");
+            int venueId;
+            while (!int.TryParse(Console.ReadLine(), out venueId))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid venue ID.");
+            }
+            // find the vneu based on entered venue
+            Venue venue = venues.Find(v => v.Id == venueId);
+            if (venue != null)
+            {
+                Console.WriteLine("Enter the name of the new theater:");
+                string theaterName = Console.ReadLine();
+
+                Console.WriteLine("Enter the type of the new theater (regular, IMAX, DBOX, FULL RECLINER):");
+                string theaterType = Console.ReadLine();
+                // theater object
+                Theater newTheater;
+                switch (theaterType.ToUpper())
+                {
+                    case "IMAX":
+                        newTheater = new IMAX(theaterName);
+                        break;
+                    case "DBOX":
+                        newTheater = new DBOX(theaterName);
+                        break;
+                    case "FULL RECLINER":
+                        newTheater = new FullRecliner(theaterName);
+                        break;
+                    default:
+                        newTheater = new Theater(theaterName);
+                        break;
+                }
+
+                ManageTheaterMenu.AddNewTheater(venueId, theaterName, theaterType);
+                Console.WriteLine($"A new Theater was added to the Venue {venueId}.");
+            }
+            else
+            {
+                Console.WriteLine($"Venue with ID {venueId} not found.");
+            }
+        }
 
         public static void RemoveVenue()
         {
             Console.WriteLine("Enter the ID of the venue where you want to remove: ");
             int id = int.Parse(Console.ReadLine());
-
+            // find venue removed based on Id
             Venue venueId = venues.Find(venue => venue.Id == id);
 
             Console.WriteLine("Enter the name of the venue you want to remove: ");
