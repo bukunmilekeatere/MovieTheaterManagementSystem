@@ -20,8 +20,9 @@ namespace MovieTheatreManagementSystem
             Console.WriteLine("3. Update venue details");
             Console.WriteLine("4. Add a new Theatre");
             Console.WriteLine("5. Remove a Theatre");
-            Console.WriteLine("6. View all venues");
-            Console.WriteLine("7.Back to the Main Menu");
+            Console.WriteLine("6. View all Theaters");
+            Console.WriteLine("7. View all venues");
+            Console.WriteLine("8.Back to the Main Menu");
             Console.WriteLine();
             Console.Write("Please enter your choice: ");
         }
