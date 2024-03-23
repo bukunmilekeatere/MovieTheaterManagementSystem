@@ -8,6 +8,11 @@ namespace MovieTheatreManagementSystem
 {
     internal class Menu
     {
+        public static string theaterType { get; private set; }
+        public static string theaterName { get; private set; }
+        public static int venueId { get; private set; }
+
+        // beginning to menu
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Movie Theater System");
@@ -144,6 +149,7 @@ namespace MovieTheatreManagementSystem
 
         }
 
+
         static void ManageVenues()
         {
             while (true)
@@ -165,7 +171,8 @@ namespace MovieTheatreManagementSystem
                             MovieTheatreManagementSystem.ManageVenueMenu.UpdateVenue();
                             break;
                         case 4:
-                            MovieTheatreManagementSystem.ManageTheaterMenu.AddNewTheater();
+                            // AddNewTheater method with the inputs
+                            MovieTheatreManagementSystem.ManageTheaterMenu.AddNewTheater(venueId, theaterName, theaterType);
                             break;
                         case 5:
                             MovieTheatreManagementSystem.ManageTheaterMenu.RemoveTheater();
@@ -186,6 +193,8 @@ namespace MovieTheatreManagementSystem
                 }
             }
         }
+
+        // searchs for the movies in a specified theater
         static void Database(List<Venue> venues)
         {
             while (true)
@@ -194,6 +203,7 @@ namespace MovieTheatreManagementSystem
             }
         }
 
+        // exits the program
         static void Exit()
         {
             Console.WriteLine("Exiting the Movie Theater Management System. Thank you!");
